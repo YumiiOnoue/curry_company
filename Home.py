@@ -6,7 +6,7 @@ st.set_page_config(
     page_icon='🏠'
 )
 
-#image_path = '/Users/User/Documents/CDS/koi.png'
+#image_path = '/Users/User/Documents/GitHub/curry_company/koi.png'
 image = Image.open('koi.png')
 st.sidebar.image(image, width=80)
 
