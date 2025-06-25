@@ -12,10 +12,7 @@ Para isso foram analisados os dados em três dimensões:
   - Indicadores semanais de crescimento dos restaurantes
 
 ## Resultado
-
-## Conclusão
-
-## Próximo passos
+O resultado dessa análise está neste link: [Dashboard](https://painelcurrycompany.streamlit.app/)
 
 ---
 Projeto desenvolvido durante as aulas da Comunidade DS. Qualquer dúvida ou sugestão, estou à disposição! 
