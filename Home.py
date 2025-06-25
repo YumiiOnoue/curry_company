@@ -6,10 +6,6 @@ st.set_page_config(
     page_icon='🏠'
 )
 
-#image_path = '/Users/User/Documents/GitHub/curry_company/koi.png'
-image = Image.open('koi.png')
-st.sidebar.image(image, width=80)
-
 st.sidebar.markdown( '# Curry Company' )
 st.sidebar.markdown( '## Fastest Delivery in Town' )
 st.sidebar.markdown( """---""" )
