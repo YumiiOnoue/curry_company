@@ -8,6 +8,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 import folium
+import datetime
 from streamlit_folium import folium_static
 from haversine import haversine
 from PIL import Image
@@ -156,10 +157,6 @@ st.header('Marketplace - Visão Entregadores')
 
 # ======= Sidebar ====================
 
-#image_path = '/Users/User/Documents/CDS/koi.png'
-image = Image.open('koi.png')
-st.sidebar.image(image, width=80)
-
 st.sidebar.markdown( '# Curry Company' )
 st.sidebar.markdown( '## Fastest Delivery in Town' )
 st.sidebar.markdown( """---""" )
@@ -169,13 +166,14 @@ st.sidebar.markdown( '## Selecione uma data limite' )
 
 date_slider = st.sidebar.slider(
     'Até qual valor?',
-    value=pd.datetime(2022, 4, 13),
-    min_value=pd.datetime(2022, 2, 11),
-    max_value=pd.datetime(2022, 4, 6),
-    format='DD-MM-YYYY')
+    value=datetime.datetime(2022, 4, 6),
+    min_value=datetime.datetime(2022, 2, 11),
+    max_value=datetime.datetime(2022, 4, 13),
+    format='DD-MM-YYYY'
+)
 
-linhas_selecionadas = df1['Order_Date'] < date_slider
-df1 = df1.loc[linhas_selecionadas, :]
+date_slider = pd.to_datetime(date_slider)
+df1 = df1[df1['Order_Date'] < date_slider]
 
 st.sidebar.markdown( """---""" )
 
